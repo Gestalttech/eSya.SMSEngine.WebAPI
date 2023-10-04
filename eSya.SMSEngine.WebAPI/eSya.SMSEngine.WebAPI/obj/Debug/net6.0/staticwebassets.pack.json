@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "PackagePath": "staticwebassets\\Resources\\ar-EG.json"
+    },
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "PackagePath": "staticwebassets\\Resources\\en-US.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.eSya.SMSEngine.WebAPI.props",
+      "PackagePath": "build\\eSya.SMSEngine.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.eSya.SMSEngine.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\eSya.SMSEngine.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.eSya.SMSEngine.WebAPI.props",
+      "PackagePath": "buildTransitive\\eSya.SMSEngine.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.eSya.SMSEngine.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

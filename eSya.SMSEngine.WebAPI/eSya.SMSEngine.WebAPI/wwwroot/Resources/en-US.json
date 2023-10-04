@@ -1,0 +1,19 @@
+{
+  "W0113": "SMS Variable is already Exist",
+  "W0114": "SMS Component is already Exist",
+  "W0115": "SMS Variable is not Exist",
+  "W0116": "SMS Description is already Exist",
+  "W0117": "SMS is not Exist",
+  "W0118": "Mobile Number is already Exist",
+  "W0119": "Mobile number is not Exist",
+  "W0120": "SMS Trigger Event is already Exist",
+  "W0121": "SMS Trigger Event Description is already Exist",
+  "W0122": "SMS Trigger Event is not Exist",
+  "W0123": "Couldn't find SMS Trigger Event",
+  "W0124": "SMS Trigger Event is not Exist",
+  "S0001": "Saved Sucessfully",
+  "S0002": "Updated Sucessfully",
+  "S0003": "Activated Successfully",
+  "S0004": "De Activated Successfully",
+  "S0005": "Deleted Sucessfully"
+}

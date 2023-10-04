@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "J6JtkIrkvKVNhKgnWGgkb/AudPuuqYQre2MZEKzeHJc=",
+  "Source": "eSya.SMSEngine.WebAPI",
+  "BasePath": "_content/eSya.SMSEngine.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "eSya.SMSEngine.WebAPI\\wwwroot",
+      "Source": "eSya.SMSEngine.WebAPI",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.SMSEngine.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "SourceId": "eSya.SMSEngine.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.SMSEngine.WebAPI",
+      "RelativePath": "Resources/ar-EG.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\ar-EG.json"
+    },
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "SourceId": "eSya.SMSEngine.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\eSya.SMSEngine.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.SMSEngine.WebAPI",
+      "RelativePath": "Resources/en-US.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\en-US.json"
+    }
+  ]
+}
