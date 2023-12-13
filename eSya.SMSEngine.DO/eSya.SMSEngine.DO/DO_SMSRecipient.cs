@@ -8,6 +8,7 @@ namespace eSya.SMSEngine.DO
     {
         public int BusinessKey { get; set; }
         public string Smsid { get; set; }
+        public int Isdcode { get; set; }
         public string MobileNumber { get; set; }
         public string RecipientName { get; set; }
         public string? Remarks { get; set; }

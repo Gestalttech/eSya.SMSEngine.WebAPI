@@ -7,6 +7,7 @@ namespace eSya.SMSEngine.DL.Entities
     {
         public int TeventId { get; set; }
         public string TeventDesc { get; set; } = null!;
+        public string FormId { get; set; } = null!;
         public bool ActiveStatus { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }

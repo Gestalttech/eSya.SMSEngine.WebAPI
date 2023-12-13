@@ -93,6 +93,7 @@ namespace eSya.SMSEngine.DL.Repository
                             Smsvariable = obj.Smsvariable,
                             Smscomponent = obj.Smscomponent,
                             ActiveStatus = obj.ActiveStatus,
+                            FormId=obj.FormID,
                             CreatedBy = obj.UserID,
                             CreatedOn = DateTime.Now,
                             CreatedTerminal = obj.TerminalID
@@ -355,6 +356,7 @@ namespace eSya.SMSEngine.DL.Repository
                                 ParameterId = p.ParameterID,
                                 ParmAction = p.ParmAction,
                                 ActiveStatus = obj.ActiveStatus,
+                                FormId=obj.FormId.ToString(),
                                 CreatedOn = DateTime.Now,
                                 CreatedTerminal = obj.TerminalID,
                                 CreatedBy = obj.UserID,
@@ -422,6 +424,7 @@ namespace eSya.SMSEngine.DL.Repository
                                     ParameterId = p.ParameterID,
                                     ParmAction = p.ParmAction,
                                     ActiveStatus = obj.ActiveStatus,
+                                    FormId=obj.FormId.ToString(),
                                     CreatedOn = DateTime.Now,
                                     CreatedTerminal = obj.TerminalID,
                                     CreatedBy = obj.UserID,
@@ -498,6 +501,7 @@ namespace eSya.SMSEngine.DL.Repository
                          .Select(r => new DO_SMSRecipient
                          {
                              Smsid = r.Smsid,
+                             Isdcode=r.Isdcode,
                              MobileNumber = r.MobileNumber,
                              RecipientName = r.RecipientName,
                              Remarks = r.Remarks,
@@ -522,7 +526,7 @@ namespace eSya.SMSEngine.DL.Repository
                 {
                     try
                     {
-                        bool is_MobilenumberExist = db.GtEcsmsrs.Any(a => a.MobileNumber.Trim() == obj.MobileNumber.Trim() && a.Smsid == obj.Smsid);
+                        bool is_MobilenumberExist = db.GtEcsmsrs.Any(a =>a.Isdcode==obj.Isdcode && a.MobileNumber.Trim() == obj.MobileNumber.Trim() && a.Smsid == obj.Smsid);
                         if (is_MobilenumberExist)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0118", Message = string.Format(_localizer[name: "W0118"]) };
@@ -532,10 +536,12 @@ namespace eSya.SMSEngine.DL.Repository
                         {
                             BusinessKey = obj.BusinessKey,
                             Smsid = obj.Smsid,
+                            Isdcode=obj.Isdcode,
                             MobileNumber = obj.MobileNumber,
                             RecipientName = obj.RecipientName,
                             Remarks = obj.Remarks,
                             ActiveStatus = obj.ActiveStatus,
+                            FormId=obj.FormId,
                             CreatedBy = obj.UserID,
                             CreatedOn = DateTime.Now,
                             CreatedTerminal = obj.TerminalID
@@ -570,7 +576,7 @@ namespace eSya.SMSEngine.DL.Repository
                 {
                     try
                     {
-                        GtEcsmsr sm_sr = db.GtEcsmsrs.Where(w => w.BusinessKey == obj.BusinessKey && w.Smsid == obj.Smsid && w.MobileNumber == obj.MobileNumber).FirstOrDefault();
+                        GtEcsmsr sm_sr = db.GtEcsmsrs.Where(w => w.BusinessKey == obj.BusinessKey && w.Smsid == obj.Smsid && w.Isdcode==obj.Isdcode && w.MobileNumber == obj.MobileNumber).FirstOrDefault();
                         if (sm_sr == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0119", Message = string.Format(_localizer[name: "W0119"]) };
@@ -656,6 +662,7 @@ namespace eSya.SMSEngine.DL.Repository
                             TeventId = obj.TEventID,
                             TeventDesc = obj.TEventDesc,
                             ActiveStatus = obj.ActiveStatus,
+                            FormId=obj.FormID,
                             CreatedBy = obj.UserID,
                             CreatedOn = DateTime.Now,
                             CreatedTerminal = obj.TerminalID
