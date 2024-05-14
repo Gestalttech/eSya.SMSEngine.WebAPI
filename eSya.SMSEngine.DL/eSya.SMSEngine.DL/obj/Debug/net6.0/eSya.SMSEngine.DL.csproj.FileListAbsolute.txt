@@ -74,3 +74,4 @@ D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DL\eSya.SMSEng
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DL\eSya.SMSEngine.DL\obj\Debug\net6.0\eSya.SMSEngine.DL.pdb
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DL\eSya.SMSEngine.DL\obj\Debug\net6.0\eSya.SMSEngine.DL.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DL\eSya.SMSEngine.DL\obj\Debug\net6.0\ref\eSya.SMSEngine.DL.dll
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DL\eSya.SMSEngine.DL\obj\Debug\net6.0\eSya.SMSEngine.DL.sourcelink.json

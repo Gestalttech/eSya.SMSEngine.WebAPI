@@ -8,6 +8,7 @@ namespace eSya.SMSEngine.DL.Entities
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
+
         public eSyaEnterprise()
         {
         }
@@ -63,6 +64,8 @@ namespace eSya.SMSEngine.DL.Entities
                 entity.Property(e => e.Isdcode).HasColumnName("ISDCode");
 
                 entity.Property(e => e.LocationDescription).HasMaxLength(150);
+
+                entity.Property(e => e.Lstatus).HasColumnName("LStatus");
 
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
