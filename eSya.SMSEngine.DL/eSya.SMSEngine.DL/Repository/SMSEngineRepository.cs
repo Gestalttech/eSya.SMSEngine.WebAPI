@@ -261,17 +261,22 @@ namespace eSya.SMSEngine.DL.Repository
             {
                 using (var db = new eSyaEnterprise())
                 {
-                    var ds = db.GtEcsmshes
-                        .Where(w => w.FormId == formId)
-                         .Select(r => new DO_SMSHeader
+
+                    var ds = db.GtEcsmshes.Join(db.GtEcsmsts,
+                        x=> new {x.TeventId},
+                        y => new {y.TeventId},
+                        (x,y)=>new {x,y})
+                       .Where(w => w.x.FormId == formId)
+                       .Select(r => new DO_SMSHeader
                          {
-                             Smsid = r.Smsid,
-                             Smsdescription = r.Smsdescription,
-                             IsVariable = r.IsVariable,
-                             TEventID = r.TeventId,
-                             Smsstatement = r.Smsstatement,
-                             ActiveStatus = r.ActiveStatus
-                         }).OrderBy(o => o.Smsid).ToListAsync();
+                             Smsid = r.x.Smsid,
+                             Smsdescription = r.x.Smsdescription,
+                             IsVariable = r.x.IsVariable,
+                             TEventID = r.x.TeventId,
+                             Smsstatement = r.x.Smsstatement,
+                             ActiveStatus = r.x.ActiveStatus,
+                             TEventDesc=r.y.TeventDesc
+                       }).OrderBy(o => o.Smsid).ToListAsync();
 
                     return await ds;
                 }
