@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using eSya.SMSEngine.DL.Entities;
 using eSya.SMSEngine.DO;
+using eSya.SMSEngine.DO.StaticVariables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,36 @@ namespace eSya.SMSEngine.DL.Repository
                                       FormName = r.FormName
                                   }).OrderBy(o => o.FormName).ToListAsync();
                     return await result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<DO_Forms>> GetFormForStorelinking()
+        {
+            try
+            {
+                using (eSyaEnterprise db = new eSyaEnterprise())
+                {
+                    var result = await db.GtEcfmfds
+                        .Join(db.GtEcfmpas,
+                            f => f.FormId,
+                            p => p.FormId,
+                            (f, p) => new { f, p })
+                       .Where(w => w.f.ActiveStatus
+                                  && w.p.ParameterId == ParameterIdValues.Form_isSMSIntegration
+                                  && w.p.ActiveStatus)
+                                  .Select(r => new DO_Forms
+                                  {
+                                      FormID = r.f.FormId,
+                                      FormCode = r.f.FormCode,
+                                      FormName = r.f.FormName
+                                  }).OrderBy(o => o.FormCode).ToListAsync();
+                    var Distinctforms = result.GroupBy(x => x.FormID).Select(y => y.First());
+                    return Distinctforms.ToList();
                 }
             }
             catch (Exception ex)

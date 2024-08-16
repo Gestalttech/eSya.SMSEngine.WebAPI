@@ -268,5 +268,33 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             return Ok(msg);
         }
         #endregion SMS Trigger Event
+
+        #region Manage SMS Location Wise
+        /// <summary>
+        /// Get SMS Information by businessKey and FormID.
+        /// UI Reffered - Manage SMS Location Wise
+        /// </summary>
+        /// <param name="businessKey"></param>
+        /// <param name="formId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetSMSInformationFormLocationWise(int businessKey, int formId)
+        {
+            var sm_sh = await _SMSEngineRepository.GetSMSInformationFormLocationWise(businessKey, formId);
+            return Ok(sm_sh);
+        }
+
+        /// <summary>
+        /// Insert into SMS Recipient .
+        /// UI Reffered - SMS Recipient
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj)
+        {
+            var msg = await _SMSEngineRepository.InsertOrUpdateSMSInformationFLW(obj);
+            return Ok(msg);
+
+        }
+        #endregion Manage SMS Location Wise
     }
 }

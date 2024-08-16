@@ -6,6 +6,7 @@ namespace eSya.SMSEngine.DO
 {
     public class DO_SMSHeader
     {
+        public int BusinessKey { get; set; }
         public string Smsid { get; set; }
         public int FormId { get; set; }
         public string Smsdescription { get; set; }
@@ -16,6 +17,7 @@ namespace eSya.SMSEngine.DO
         public string Smsstatement { get; set; }
         public bool ActiveStatus { get; set; }
         public int UserID { get; set; }
+        public string FormId1 { get; set; }
         public string TerminalID { get; set; }
 
         public List<DO_eSyaParameter> l_SMSParameter { get; set; }

@@ -8,6 +8,8 @@ namespace eSya.SMSEngine.DO
     {
         public int FormID { get; set; }
         public string FormName { get; set; }
+        public string FormCode { get; set; }
+        
     }
 
     public class DO_BusinessLocation

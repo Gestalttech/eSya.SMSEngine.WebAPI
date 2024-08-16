@@ -813,5 +813,109 @@ namespace eSya.SMSEngine.DL.Repository
             }
         }
         #endregion SMS Trigger Event
+
+        #region Manage SMS Location Wise
+
+        public async Task<List<DO_SMSHeader>> GetSMSInformationFormLocationWise(int businessKey, int formId)
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+
+                    var ds = await db.GtEcsmshes.Join(db.GtEcsmsts,
+                        x => new { x.TeventId },
+                        y => new { y.TeventId },
+                        (x, y) => new { x, y })
+                       .Where(w => w.x.FormId == formId)
+                       .Select(r => new DO_SMSHeader
+                       {
+                           Smsid = r.x.Smsid,
+                           Smsdescription = r.x.Smsdescription,
+                           IsVariable = r.x.IsVariable,
+                           TEventID = r.x.TeventId,
+                           TEventDesc = r.y.TeventDesc,
+                           Smsstatement = r.x.Smsstatement,
+                           ActiveStatus = r.x.ActiveStatus
+                       }).OrderBy(o => o.Smsid).ToListAsync();
+
+                    foreach (var obj in ds)
+                    {
+                        GtSmsloc pf = db.GtSmslocs.Where(x => x.BusinessKey == businessKey && x.FormId == formId).FirstOrDefault();
+                        if (pf != null)
+                        {
+                            obj.ActiveStatus = pf.ActiveStatus;
+                        }
+                        else
+                        {
+                            obj.ActiveStatus = false;
+
+                        }
+                    }
+                    return ds;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj)
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                using (var dbContext = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        foreach (var Sms_loc in obj)
+                        {
+                            GtSmsloc Smsloc = db.GtSmslocs.Where(x => x.BusinessKey == Sms_loc.BusinessKey && x.FormId == Sms_loc.FormId && x.Smsid == Sms_loc.Smsid).FirstOrDefault();
+                            if (Smsloc != null)
+                            {
+                                Smsloc.BusinessKey = Sms_loc.BusinessKey;
+                                Smsloc.FormId = Sms_loc.FormId;
+                                Smsloc.Smsid = Sms_loc.Smsid;
+                                Smsloc.ActiveStatus = Sms_loc.ActiveStatus;
+                                Smsloc.ModifiedBy = Sms_loc.UserID;
+                                Smsloc.ModifiedOn = System.DateTime.Now;
+                                Smsloc.ModifiedTerminal = Sms_loc.TerminalID;
+                            }
+                            else
+                            {
+                                var Smsloc1 = new GtSmsloc
+                                {
+                                    BusinessKey = Sms_loc.BusinessKey,
+                                    FormId = Sms_loc.FormId,
+                                    Smsid = Sms_loc.Smsid,
+                                    ActiveStatus = Sms_loc.ActiveStatus,
+                                    CreatedBy = Sms_loc.UserID,
+                                    FormId1 = Sms_loc.FormId1,
+                                    CreatedOn = System.DateTime.Now,
+                                    CreatedTerminal = Sms_loc.TerminalID
+                                };
+                                db.GtSmslocs.Add(Smsloc1);
+                            }
+                                await db.SaveChangesAsync();
+                        }
+                        dbContext.Commit();
+                        return new DO_ReturnParameter() { Status = true, StatusCode = "S0002", Message = string.Format(_localizer[name: "S0002"]) };
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        dbContext.Rollback();
+                        throw new Exception(CommonMethod.GetValidationMessageFromException(ex));
+                    }
+                    catch (Exception ex)
+                    {
+                        dbContext.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+        }
+        #endregion Manage SMS Location Wise
     }
 }

@@ -61,5 +61,10 @@ namespace eSya.SMSEngine.IF
 
         Task<DO_ReturnParameter> ActiveOrDeActiveSMSTriggerEvent(bool status, int TriggerEventId);
         #endregion SMS Trigger Event
+
+        #region Manage SMS Location Wise
+        Task<List<DO_SMSHeader>> GetSMSInformationFormLocationWise(int businessKey, int formId);
+        Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj);
+        #endregion Manage SMS Location Wise
     }
 }

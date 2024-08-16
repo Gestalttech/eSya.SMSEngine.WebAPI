@@ -29,5 +29,17 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             var ds = await new CommonMethod().GetFormDetails();
             return Ok(ds);
         }
+
+        /// <summary>
+        /// Get Form Detail.
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetFormForStorelinking()
+        {
+            var ds = await new CommonMethod().GetFormForStorelinking();
+            return Ok(ds);
+        }
     }
 }
