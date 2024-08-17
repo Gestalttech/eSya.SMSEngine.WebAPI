@@ -65,7 +65,7 @@ namespace eSya.SMSEngine.DL.Repository
             }
         }
 
-        public async Task<List<DO_Forms>> GetFormForStorelinking()
+        public async Task<List<DO_Forms>> GetFormForSMSlinking()
         {
             try
             {
