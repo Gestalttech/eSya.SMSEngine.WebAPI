@@ -289,7 +289,7 @@ namespace eSya.SMSEngine.WebAPI.Controllers
         /// UI Reffered - SMS Recipient
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj)
+        public async Task<IActionResult> InsertOrUpdateSMSInformationFLW(List<DO_BusinessFormSMSLink> obj)
         {
             var msg = await _SMSEngineRepository.InsertOrUpdateSMSInformationFLW(obj);
             return Ok(msg);

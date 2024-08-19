@@ -32,4 +32,15 @@ namespace eSya.SMSEngine.DO
         public string TerminalID { get; set; }
         public string FormID { get; set; }
     }
+
+    public class DO_BusinessFormSMSLink
+    {
+        public int BusinessKey { get; set; }
+        public string Smsid { get; set; }
+        public int FormId { get; set; }
+        public bool ActiveStatus { get; set; }
+        public int UserID { get; set; }
+        public string FormId1 { get; set; }
+        public string TerminalID { get; set; }
+    }
 }

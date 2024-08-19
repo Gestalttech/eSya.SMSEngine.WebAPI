@@ -64,7 +64,7 @@ namespace eSya.SMSEngine.IF
 
         #region Manage SMS Location Wise
         Task<List<DO_SMSHeader>> GetSMSInformationFormLocationWise(int businessKey, int formId);
-        Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj);
+        Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_BusinessFormSMSLink> obj);
         #endregion Manage SMS Location Wise
     }
 }

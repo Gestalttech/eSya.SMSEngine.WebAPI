@@ -862,7 +862,7 @@ namespace eSya.SMSEngine.DL.Repository
             }
         }
 
-        public async Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_SMSHeader> obj)
+        public async Task<DO_ReturnParameter> InsertOrUpdateSMSInformationFLW(List<DO_BusinessFormSMSLink> obj)
         {
             using (var db = new eSyaEnterprise())
             {

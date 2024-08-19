@@ -31,6 +31,17 @@ namespace eSya.SMSEngine.WebAPI.Controllers
         }
 
         /// <summary>
+        /// Get Business key with SMS Integration.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetBusinessKeyBySMSIntegration()
+        {
+            var ds = await new CommonMethod().GetBusinessKeyBySMSIntegration();
+            return Ok(ds);
+        }
+
+        /// <summary>
         /// Get Form Detail.
         /// 
         /// </summary>

@@ -20,6 +20,7 @@ namespace eSya.SMSEngine.DL.Entities
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
         public virtual DbSet<GtEcfmfd> GtEcfmfds { get; set; } = null!;
         public virtual DbSet<GtEcfmpa> GtEcfmpas { get; set; } = null!;
+        public virtual DbSet<GtEcpabl> GtEcpabls { get; set; } = null!;
         public virtual DbSet<GtEcsmsd> GtEcsmsds { get; set; } = null!;
         public virtual DbSet<GtEcsmsh> GtEcsmshes { get; set; } = null!;
         public virtual DbSet<GtEcsmsr> GtEcsmsrs { get; set; } = null!;
@@ -138,6 +139,43 @@ namespace eSya.SMSEngine.DL.Entities
                     .HasForeignKey(d => d.FormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GT_ECFMPA_GT_ECFMFD");
+            });
+
+            modelBuilder.Entity<GtEcpabl>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.ParameterId });
+
+                entity.ToTable("GT_ECPABL");
+
+                entity.Property(e => e.ParameterId).HasColumnName("ParameterID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.ParmDesc)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ParmPerc).HasColumnType("numeric(5, 2)");
+
+                entity.Property(e => e.ParmValue).HasColumnType("numeric(18, 6)");
+
+                entity.HasOne(d => d.BusinessKeyNavigation)
+                    .WithMany(p => p.GtEcpabls)
+                    .HasPrincipalKey(p => p.BusinessKey)
+                    .HasForeignKey(d => d.BusinessKey)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GT_ECPABL_GT_ECBSLN");
             });
 
             modelBuilder.Entity<GtEcsmsd>(entity =>

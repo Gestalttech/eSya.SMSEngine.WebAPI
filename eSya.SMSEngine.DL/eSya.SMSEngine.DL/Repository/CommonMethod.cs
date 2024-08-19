@@ -65,6 +65,33 @@ namespace eSya.SMSEngine.DL.Repository
             }
         }
 
+        public async Task<List<DO_BusinessLocation>> GetBusinessKeyBySMSIntegration()
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+                    var bk = db.GtEcbslns.Join(db.GtEcpabls,
+                        f => f.BusinessKey,
+                        p => p.BusinessKey,
+                        (f, p) => new { f, p })
+                        .Where(w => w.f.ActiveStatus && w.p.ParameterId == ParameterIdValues.Form_isSMSIntegration
+                                  && w.p.ParmAction && w.p.ActiveStatus)
+                        .Select(r => new DO_BusinessLocation
+                        {
+                            BusinessKey = r.f.BusinessKey,
+                            LocationDescription = r.f.BusinessName + "-" + r.f.LocationDescription
+                        }).ToListAsync();
+
+                    return await bk;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<DO_Forms>> GetFormForSMSlinking()
         {
             try
