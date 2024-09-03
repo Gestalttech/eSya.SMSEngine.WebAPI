@@ -9,6 +9,6 @@ namespace eSya.SMSEngine.DO.StaticVariables
     public class ParameterIdValues
     {
         public const int Form_isStoreLink = 1;
-        public const int Form_isSMSIntegration = 2;
+        public const int Form_isSMSIntegration = 4;
     }
 }
