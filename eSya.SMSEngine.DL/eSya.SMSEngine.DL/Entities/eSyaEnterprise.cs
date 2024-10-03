@@ -58,6 +58,8 @@ namespace eSya.SMSEngine.DL.Entities
 
                 entity.Property(e => e.CurrencyCode).HasMaxLength(4);
 
+                entity.Property(e => e.DateFormat).HasMaxLength(25);
+
                 entity.Property(e => e.FormId)
                     .HasMaxLength(10)
                     .IsUnicode(false)
@@ -73,16 +75,9 @@ namespace eSya.SMSEngine.DL.Entities
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
+                entity.Property(e => e.ShortDateFormat).HasMaxLength(15);
+
                 entity.Property(e => e.ShortDesc).HasMaxLength(15);
-
-                entity.Property(e => e.TocurrConversion).HasColumnName("TOCurrConversion");
-
-                entity.Property(e => e.TolocalCurrency)
-                    .IsRequired()
-                    .HasColumnName("TOLocalCurrency")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.TorealCurrency).HasColumnName("TORealCurrency");
             });
 
             modelBuilder.Entity<GtEcfmfd>(entity =>
