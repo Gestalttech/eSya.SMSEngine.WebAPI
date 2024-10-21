@@ -8,6 +8,7 @@ namespace eSya.SMSEngine.DL.Entities
         public GtEcfmfd()
         {
             GtEcfmpas = new HashSet<GtEcfmpa>();
+            GtEcmnfls = new HashSet<GtEcmnfl>();
         }
 
         public int FormId { get; set; }
@@ -24,5 +25,6 @@ namespace eSya.SMSEngine.DL.Entities
         public string? ModifiedTerminal { get; set; }
 
         public virtual ICollection<GtEcfmpa> GtEcfmpas { get; set; }
+        public virtual ICollection<GtEcmnfl> GtEcmnfls { get; set; }
     }
 }

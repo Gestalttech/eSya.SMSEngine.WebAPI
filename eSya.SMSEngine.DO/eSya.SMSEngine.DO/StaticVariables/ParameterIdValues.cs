@@ -10,5 +10,7 @@ namespace eSya.SMSEngine.DO.StaticVariables
     {
         public const int Form_isStoreLink = 1;
         public const int Form_isSMSIntegration = 4;
+        public const int Location_isSMSIntegration = 2;
+
     }
 }

@@ -8,6 +8,7 @@ namespace eSya.SMSEngine.DL.Entities
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
+
         public eSyaEnterprise()
         {
         }
@@ -18,8 +19,10 @@ namespace eSya.SMSEngine.DL.Entities
         }
 
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
+        public virtual DbSet<GtEcbsmn> GtEcbsmns { get; set; } = null!;
         public virtual DbSet<GtEcfmfd> GtEcfmfds { get; set; } = null!;
         public virtual DbSet<GtEcfmpa> GtEcfmpas { get; set; } = null!;
+        public virtual DbSet<GtEcmnfl> GtEcmnfls { get; set; } = null!;
         public virtual DbSet<GtEcpabl> GtEcpabls { get; set; } = null!;
         public virtual DbSet<GtEcsmsd> GtEcsmsds { get; set; } = null!;
         public virtual DbSet<GtEcsmsh> GtEcsmshes { get; set; } = null!;
@@ -80,6 +83,21 @@ namespace eSya.SMSEngine.DL.Entities
                 entity.Property(e => e.ShortDesc).HasMaxLength(15);
             });
 
+            modelBuilder.Entity<GtEcbsmn>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.MenuKey });
+
+                entity.ToTable("GT_ECBSMN");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<GtEcfmfd>(entity =>
             {
                 entity.HasKey(e => e.FormId);
@@ -134,6 +152,35 @@ namespace eSya.SMSEngine.DL.Entities
                     .HasForeignKey(d => d.FormId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GT_ECFMPA_GT_ECFMFD");
+            });
+
+            modelBuilder.Entity<GtEcmnfl>(entity =>
+            {
+                entity.HasKey(e => new { e.FormId, e.MainMenuId, e.MenuItemId });
+
+                entity.ToTable("GT_ECMNFL");
+
+                entity.Property(e => e.FormId).HasColumnName("FormID");
+
+                entity.Property(e => e.MainMenuId).HasColumnName("MainMenuID");
+
+                entity.Property(e => e.MenuItemId).HasColumnName("MenuItemID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormNameClient).HasMaxLength(50);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.HasOne(d => d.Form)
+                    .WithMany(p => p.GtEcmnfls)
+                    .HasForeignKey(d => d.FormId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GT_ECMNFL_GT_ECFMFD");
             });
 
             modelBuilder.Entity<GtEcpabl>(entity =>

@@ -42,19 +42,59 @@ namespace eSya.SMSEngine.DL.Repository
                 throw ex;
             }
         }
-
         public async Task<List<DO_Forms>> GetFormDetails()
         {
             try
             {
                 using (eSyaEnterprise db = new eSyaEnterprise())
                 {
+
                     var result = db.GtEcfmfds
-                                  .Where(w => w.ActiveStatus)
+                        .Join(db.GtEcfmpas,
+                            f => f.FormId,
+                            p => p.FormId,
+                            (f, p) => new { f, p })
+                       .Where(w => w.f.ActiveStatus
+                                  && w.p.ParameterId == ParameterIdValues.Form_isSMSIntegration
+                                  && w.p.ActiveStatus)
                                   .Select(r => new DO_Forms
                                   {
-                                      FormID = r.FormId,
-                                      FormName = r.FormName
+                                      FormID = r.f.FormId,
+                                      FormName = r.f.FormName,
+                                      FormCode = r.f.FormCode,
+                                  }).OrderBy(o => o.FormName).ToListAsync();
+
+                    return await result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<DO_Forms>> GetFormDetailsbyBusinessKey(int businesskey)
+        {
+            try
+            {
+                using (eSyaEnterprise db = new eSyaEnterprise())
+                {
+                    var result = db.GtEcbsmns.Join(db.GtEcmnfls,
+                        b => new {b.MenuKey},
+                        l => new {l.MenuKey},
+                        (b, l) => new {b,l}).Join(db.GtEcfmfds,
+                        bl => new {bl.l.FormId},
+                        f => new {f.FormId},
+                        (bl, f) => new {bl,f}).Join(db.GtEcfmpas,
+                        fa => new {fa.f.FormId},
+                        p => new {p.FormId},
+                        (fa, p) => new {fa,p})
+                        .Where(w => w.fa.bl.b.BusinessKey==businesskey && w.fa.bl.b.ActiveStatus
+                        && w.fa.bl.l.ActiveStatus && w.fa.f.ActiveStatus && w.p.ParameterId== ParameterIdValues.Form_isSMSIntegration && w.p.ActiveStatus )
+                                  .Select(r => new DO_Forms
+                                  {
+                                      FormID = r.fa.f.FormId,
+                                      FormName = r.fa.f.FormName,
+                                      FormCode=r.fa.f.FormCode
                                   }).OrderBy(o => o.FormName).ToListAsync();
                     return await result;
                 }
@@ -75,7 +115,7 @@ namespace eSya.SMSEngine.DL.Repository
                         f => f.BusinessKey,
                         p => p.BusinessKey,
                         (f, p) => new { f, p })
-                        .Where(w => w.f.ActiveStatus && w.p.ParameterId == ParameterIdValues.Form_isSMSIntegration
+                        .Where(w => w.f.ActiveStatus && w.p.ParameterId == ParameterIdValues.Location_isSMSIntegration
                                   && w.p.ParmAction && w.p.ActiveStatus)
                         .Select(r => new DO_BusinessLocation
                         {

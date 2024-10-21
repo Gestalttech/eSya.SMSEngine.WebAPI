@@ -53,9 +53,9 @@ D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEng
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.sourcelink.json
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.csproj.CopyComplete
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.dll
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\refint\eSya.SMSEngine.IF.dll
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.pdb
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\ref\eSya.SMSEngine.IF.dll
-D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.IF\eSya.SMSEngine.IF\obj\Debug\net6.0\eSya.SMSEngine.IF.sourcelink.json

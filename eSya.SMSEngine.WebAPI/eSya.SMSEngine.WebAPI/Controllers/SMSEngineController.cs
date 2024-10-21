@@ -205,69 +205,69 @@ namespace eSya.SMSEngine.WebAPI.Controllers
 
         }
 
+        //#region Trigger Event shifted to product setup API
+        ///// <summary>
+        ///// Get SMS Trigger Event by Trigger event Id.
+        ///// UI Reffered - SMS Trigger Event
+        ///// </summary>
+        ///// <param name="TeventId"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public async Task<IActionResult> DeleteSMSTriggerEvent(int TeventId)
+        //{
+        //    var msg = await _SMSEngineRepository.DeleteSMSTriggerEvent(TeventId);
+        //    return Ok(msg);
+        //}
+       
+        ///// <summary>
+        ///// Get SMS Trigger Event.
+        ///// UI Reffered - SMS Trigger Event
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public async Task<IActionResult> GetAllSMSTriggerEvents()
+        //{
+        //    var sms_tevents = await _SMSEngineRepository.GetAllSMSTriggerEvents();
+        //    return Ok(sms_tevents);
+        //}
 
-        /// <summary>
-        /// Get SMS Trigger Event by Trigger event Id.
-        /// UI Reffered - SMS Trigger Event
-        /// </summary>
-        /// <param name="TeventId"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> DeleteSMSTriggerEvent(int TeventId)
-        {
-            var msg = await _SMSEngineRepository.DeleteSMSTriggerEvent(TeventId);
-            return Ok(msg);
-        }
-        #region Trigger Event
-        /// <summary>
-        /// Get SMS Trigger Event.
-        /// UI Reffered - SMS Trigger Event
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> GetAllSMSTriggerEvents()
-        {
-            var sms_tevents = await _SMSEngineRepository.GetAllSMSTriggerEvents();
-            return Ok(sms_tevents);
-        }
+        ///// <summary>
+        ///// Insert into SMS Trigger Event .
+        ///// UI Reffered - SMS Trigger Event
+        ///// </summary>
+        //[HttpPost]
+        //public async Task<IActionResult> InsertIntoSMSTriggerEvent(DO_SMSTEvent obj)
+        //{
+        //    var msg = await _SMSEngineRepository.InsertIntoSMSTriggerEvent(obj);
+        //    return Ok(msg);
 
-        /// <summary>
-        /// Insert into SMS Trigger Event .
-        /// UI Reffered - SMS Trigger Event
-        /// </summary>
-        [HttpPost]
-        public async Task<IActionResult> InsertIntoSMSTriggerEvent(DO_SMSTEvent obj)
-        {
-            var msg = await _SMSEngineRepository.InsertIntoSMSTriggerEvent(obj);
-            return Ok(msg);
+        //}
 
-        }
+        ///// <summary>
+        ///// Update SMS Trigger Event .
+        ///// UI Reffered - SMS Trigger Event
+        ///// </summary>
+        //[HttpPost]
+        //public async Task<IActionResult> UpdateSMSTriggerEvent(DO_SMSTEvent obj)
+        //{
+        //    var msg = await _SMSEngineRepository.UpdateSMSTriggerEvent(obj);
+        //    return Ok(msg);
 
-        /// <summary>
-        /// Update SMS Trigger Event .
-        /// UI Reffered - SMS Trigger Event
-        /// </summary>
-        [HttpPost]
-        public async Task<IActionResult> UpdateSMSTriggerEvent(DO_SMSTEvent obj)
-        {
-            var msg = await _SMSEngineRepository.UpdateSMSTriggerEvent(obj);
-            return Ok(msg);
+        //}
 
-        }
-
-        /// <summary>
-        /// Active Or De Active SMS Trigger Event.
-        /// UI Reffered - SMS Trigger Event
-        /// </summary>
-        /// <param name="status-smsvariable"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> ActiveOrDeActiveSMSTriggerEvent(bool status, int TriggerEventId)
-        {
-            var msg = await _SMSEngineRepository.ActiveOrDeActiveSMSTriggerEvent(status, TriggerEventId);
-            return Ok(msg);
-        }
-        #endregion SMS Trigger Event
+        ///// <summary>
+        ///// Active Or De Active SMS Trigger Event.
+        ///// UI Reffered - SMS Trigger Event
+        ///// </summary>
+        ///// <param name="status-smsvariable"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public async Task<IActionResult> ActiveOrDeActiveSMSTriggerEvent(bool status, int TriggerEventId)
+        //{
+        //    var msg = await _SMSEngineRepository.ActiveOrDeActiveSMSTriggerEvent(status, TriggerEventId);
+        //    return Ok(msg);
+        //}
+        //#endregion SMS Trigger Event
 
         #region Manage SMS Location Wise
         /// <summary>

@@ -41,8 +41,8 @@ D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEng
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.sourcelink.json
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.dll
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\refint\eSya.SMSEngine.DO.dll
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.pdb
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\ref\eSya.SMSEngine.DO.dll
-D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.DO\eSya.SMSEngine.DO\obj\Debug\net6.0\eSya.SMSEngine.DO.sourcelink.json

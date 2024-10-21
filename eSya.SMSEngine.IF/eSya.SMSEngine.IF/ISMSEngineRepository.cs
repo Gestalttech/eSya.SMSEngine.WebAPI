@@ -50,17 +50,17 @@ namespace eSya.SMSEngine.IF
 
         #endregion SMS Recipient
 
-        #region Trigger Event
-        Task<List<DO_SMSTEvent>> GetAllSMSTriggerEvents();
+        //#region Trigger Event shifted to product setup API
+        //Task<List<DO_SMSTEvent>> GetAllSMSTriggerEvents();
 
-        Task<DO_ReturnParameter> InsertIntoSMSTriggerEvent(DO_SMSTEvent obj);
+        //Task<DO_ReturnParameter> InsertIntoSMSTriggerEvent(DO_SMSTEvent obj);
 
-        Task<DO_ReturnParameter> UpdateSMSTriggerEvent(DO_SMSTEvent obj);
+        //Task<DO_ReturnParameter> UpdateSMSTriggerEvent(DO_SMSTEvent obj);
 
-        Task<DO_ReturnParameter> DeleteSMSTriggerEvent(int TeventId);
+        //Task<DO_ReturnParameter> DeleteSMSTriggerEvent(int TeventId);
 
-        Task<DO_ReturnParameter> ActiveOrDeActiveSMSTriggerEvent(bool status, int TriggerEventId);
-        #endregion SMS Trigger Event
+        //Task<DO_ReturnParameter> ActiveOrDeActiveSMSTriggerEvent(bool status, int TriggerEventId);
+        //#endregion SMS Trigger Event
 
         #region Manage SMS Location Wise
         Task<List<DO_SMSHeader>> GetSMSInformationFormLocationWise(int businessKey, int formId);

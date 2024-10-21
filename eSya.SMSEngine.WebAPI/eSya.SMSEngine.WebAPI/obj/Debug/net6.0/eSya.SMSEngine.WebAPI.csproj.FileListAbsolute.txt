@@ -1099,13 +1099,14 @@ D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SM
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.csproj.CoreCompileInputs.cache
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.sourcelink.json
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.eSya.SMSEngine.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.eSya.SMSEngine.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.eSya.SMSEngine.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.eSya.SMSEngine.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets.build.json
-D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\scopedcss\bundle\eSya.SMSEngine.WebAPI.styles.css
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.csproj.CopyComplete
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.dll
@@ -1113,4 +1114,3 @@ D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SM
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.pdb
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\ref\eSya.SMSEngine.WebAPI.dll
-D:\Projects\eSyaProjects2022\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\eSya.SMSEngine.WebAPI\obj\Debug\net6.0\eSya.SMSEngine.WebAPI.sourcelink.json
