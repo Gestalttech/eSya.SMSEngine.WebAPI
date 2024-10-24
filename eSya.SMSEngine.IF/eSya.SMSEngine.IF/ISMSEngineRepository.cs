@@ -8,12 +8,9 @@ namespace eSya.SMSEngine.IF
 {
     public interface ISMSEngineRepository
     {
-        #region SMS Variable
+        #region SMS Variable need to remove shifted to product setup
 
         Task<List<DO_SMSVariable>> GetSMSVariableInformation();
-
-        Task<List<DO_SMSVariable>> GetActiveSMSVariableInformation();
-
         Task<DO_ReturnParameter> InsertIntoSMSVariable(DO_SMSVariable obj);
 
         Task<DO_ReturnParameter> UpdateSMSVariable(DO_SMSVariable obj);
@@ -22,9 +19,10 @@ namespace eSya.SMSEngine.IF
 
         #endregion SMS Variable
 
-        #region SMS Information
+        #region SMS Template
+        Task<List<DO_SMSVariable>> GetActiveSMSVariableInformation();
         Task<List<DO_Forms>> GetExistingFormsFromSMSHeader();
-
+        Task<int> GetMaxSequenceNumberbyTriggerEventID(int TeventID);
         Task<List<DO_SMSTEvent>> GetSMSTriggerEvent();
 
         Task<List<DO_SMSHeader>> GetSMSHeaderInformationByFormId(int formId);

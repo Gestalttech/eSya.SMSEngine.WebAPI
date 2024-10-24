@@ -14,7 +14,7 @@ namespace eSya.SMSEngine.WebAPI.Controllers
         {
             _SMSEngineRepository = smsEngineRepository;
         }
-
+        #region SMS variables need to remove shifted to product setup
         /// <summary>
         /// Get SMS Variable Information.
         /// UI Reffered - SMS Variable
@@ -26,19 +26,6 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             var sm_sv = await _SMSEngineRepository.GetSMSVariableInformation();
             return Ok(sm_sv);
         }
-
-        /// <summary>
-        /// Get Active SMS Variable Information.
-        /// UI Reffered - SMS Information
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> GetActiveSMSVariableInformation()
-        {
-            var sm_sv = await _SMSEngineRepository.GetActiveSMSVariableInformation();
-            return Ok(sm_sv);
-        }
-
 
         /// <summary>
         /// Insert into SMS Variable .
@@ -76,6 +63,21 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             var msg = await _SMSEngineRepository.ActiveOrDeActiveSMSVariable(status, smsvariable);
             return Ok(msg);
         }
+        #endregion
+
+        #region SMS Template
+        /// <summary>
+        /// Get Active SMS Variable Information.
+        /// UI Reffered - SMS Information
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetActiveSMSVariableInformation()
+        {
+            var sm_sv = await _SMSEngineRepository.GetActiveSMSVariableInformation();
+            return Ok(sm_sv);
+        }
+
 
         /// <summary>
         /// Get Existing Forms from SMS Header.
@@ -88,7 +90,17 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             var ex_forms = await _SMSEngineRepository.GetExistingFormsFromSMSHeader();
             return Ok(ex_forms);
         }
-
+        /// <summary>
+        /// Get Max Sequence Number.
+        /// UI Reffered - SMS Information
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetMaxSequenceNumberbyTriggerEventID(int TeventID)
+        {
+            var ex_forms = await _SMSEngineRepository.GetMaxSequenceNumberbyTriggerEventID(TeventID);
+            return Ok(ex_forms);
+        }
         /// <summary>
         /// Get SMS Header Information by Formid.
         /// UI Reffered - SMS Information
@@ -204,6 +216,7 @@ namespace eSya.SMSEngine.WebAPI.Controllers
             return Ok(msg);
 
         }
+        #endregion
 
         //#region Trigger Event shifted to product setup API
         ///// <summary>
@@ -218,7 +231,7 @@ namespace eSya.SMSEngine.WebAPI.Controllers
         //    var msg = await _SMSEngineRepository.DeleteSMSTriggerEvent(TeventId);
         //    return Ok(msg);
         //}
-       
+
         ///// <summary>
         ///// Get SMS Trigger Event.
         ///// UI Reffered - SMS Trigger Event

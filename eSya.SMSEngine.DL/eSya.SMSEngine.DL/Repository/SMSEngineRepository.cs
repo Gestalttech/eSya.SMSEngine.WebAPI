@@ -19,7 +19,7 @@ namespace eSya.SMSEngine.DL.Repository
         {
             _localizer = localizer;
         }
-        #region SMS Variable
+        #region SMS Variable has to remove shifted in product setup
 
         public async Task<List<DO_SMSVariable>> GetSMSVariableInformation()
         {
@@ -33,29 +33,6 @@ namespace eSya.SMSEngine.DL.Repository
                              Smsvariable = r.Smsvariable,
                              Smscomponent = r.Smscomponent,
                              ActiveStatus = r.ActiveStatus
-                         }).OrderBy(o => o.Smsvariable).ToListAsync();
-
-                    return await ds;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public async Task<List<DO_SMSVariable>> GetActiveSMSVariableInformation()
-        {
-            try
-            {
-                using (var db = new eSyaEnterprise())
-                {
-                    var ds = db.GtEcsmsvs
-                        .Where(w => w.ActiveStatus)
-                         .Select(r => new DO_SMSVariable
-                         {
-                             Smsvariable = r.Smsvariable,
-                             Smscomponent = r.Smscomponent
                          }).OrderBy(o => o.Smsvariable).ToListAsync();
 
                     return await ds;
@@ -206,8 +183,29 @@ namespace eSya.SMSEngine.DL.Repository
 
         #endregion SMS Variable
 
-        #region SMS Information
-       
+        #region SMS Template
+        public async Task<List<DO_SMSVariable>> GetActiveSMSVariableInformation()
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+                    var ds = db.GtEcsmsvs
+                        .Where(w => w.ActiveStatus)
+                         .Select(r => new DO_SMSVariable
+                         {
+                             Smsvariable = r.Smsvariable,
+                             Smscomponent = r.Smscomponent
+                         }).OrderBy(o => o.Smsvariable).ToListAsync();
+
+                    return await ds;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<List<DO_Forms>> GetExistingFormsFromSMSHeader()
         {
             try
@@ -255,7 +253,29 @@ namespace eSya.SMSEngine.DL.Repository
                 throw ex;
             }
         }
+        public async Task<int> GetMaxSequenceNumberbyTriggerEventID(int TeventID)
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+                    int maxsequence = 0;
+                    var ds =await db.GtEcsmsts
+                        .Where(w => w.TeventId == TeventID && w.ActiveStatus).FirstOrDefaultAsync();
+                    if(ds != null)
+                    {
+                        maxsequence = ds.MaxSequenceNumber;
+                    }
+                         
 
+                    return maxsequence;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<List<DO_SMSHeader>> GetSMSHeaderInformationByFormId(int formId)
         {
             try
@@ -276,7 +296,8 @@ namespace eSya.SMSEngine.DL.Repository
                              TEventID = r.x.TeventId,
                              Smsstatement = r.x.Smsstatement,
                              ActiveStatus = r.x.ActiveStatus,
-                             TEventDesc=r.y.TeventDesc
+                             TEventDesc=r.y.TeventDesc,
+                             SequenceNumber=r.x.SequenceNumber,
                        }).OrderBy(o => o.Smsid).ToListAsync();
 
                     return await ds;
@@ -304,6 +325,7 @@ namespace eSya.SMSEngine.DL.Repository
                              TEventID = r.TeventId,
                              Smsstatement = r.Smsstatement,
                              ActiveStatus = r.ActiveStatus,
+                             SequenceNumber=r.SequenceNumber,
                              l_SMSParameter = r.GtEcsmsds.Select(p => new DO_eSyaParameter
                              {
                                  ParameterID = p.ParameterId,
@@ -346,6 +368,7 @@ namespace eSya.SMSEngine.DL.Repository
                             IsVariable = obj.IsVariable,
                             TeventId = obj.TEventID,
                             Smsstatement = obj.Smsstatement,
+                            SequenceNumber=obj.SequenceNumber,
                             ActiveStatus = obj.ActiveStatus,
                             CreatedBy = obj.UserID,
                             CreatedOn = DateTime.Now,
@@ -414,6 +437,7 @@ namespace eSya.SMSEngine.DL.Repository
                         sm_sh.IsVariable = obj.IsVariable;
                         sm_sh.TeventId = obj.TEventID;
                         sm_sh.Smsstatement = obj.Smsstatement;
+                        sm_sh.SequenceNumber = obj.SequenceNumber;
                         sm_sh.ActiveStatus = obj.ActiveStatus;
                         sm_sh.ModifiedBy = obj.UserID;
                         sm_sh.ModifiedOn = DateTime.Now;

@@ -15,6 +15,7 @@ namespace eSya.SMSEngine.DO
         public string? TEventDesc { get; set; }
         public string? Tevent { get; set; }
         public string Smsstatement { get; set; }
+        public int SequenceNumber { get; set; }
         public bool ActiveStatus { get; set; }
         public int UserID { get; set; }
         public string FormId1 { get; set; }
